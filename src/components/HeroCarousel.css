@@ -1,0 +1,17 @@
+.carousel-image {
+  height: 80vh; /* Sets the height to 80% of the viewport height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  filter: brightness(0.7); /* Optional: Darkens the image slightly to make text more readable */
+}
+
+/* Custom styling for the captions */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.4); /* Adds a semi-transparent black background */
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.carousel-caption h3 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}

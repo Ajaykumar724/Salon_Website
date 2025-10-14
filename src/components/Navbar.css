@@ -1,0 +1,163 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* --- CSS Variables for Easy Customization --- */
+:root {
+  --primary-color: #d4af37; /* A gold/tan color for accents */
+  --dark-color: #1a1a1a;
+  --text-color: #333;
+  --background-color: #ffffff;
+  --font-family: 'Montserrat', sans-serif;
+}
+
+/* --- General Styles --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Promotion Banner --- */
+.promo-banner {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+  text-align: center;
+  padding: 8px 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* --- Main Navbar Container --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  height: 80px;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* --- Logo --- */
+.nav-logo img {
+  max-height: 50px; /* Adjust based on your logo's dimensions */
+}
+
+/* --- Navigation Links --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 35px;
+}
+
+.nav-links li a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--primary-color);
+}
+
+/* --- Special "Book Now" Button --- */
+.book-now-btn {
+  background-color: var(--primary-color);
+  color: var(--background-color) !important; /* Override other link styles */
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #b89a30; /* A slightly darker shade for hover */
+}
+
+/* --- Right Side Icons --- */
+.nav-icons {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.2rem;
+}
+
+.nav-icons a {
+    transition: color 0.3s ease;
+}
+
+.nav-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Mobile Menu Icon (Hamburger) --- */
+.menu-icon {
+  display: none; /* Hidden by default on larger screens */
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media screen and (max-width: 960px) {
+  .nav-links {
+    display: none; /* Hide the links by default on smaller screens */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 80px; /* Position below the navbar */
+    left: 0;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    gap: 0;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show the menu when active */
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-links li a {
+    display: block;
+    padding: 15px 0;
+  }
+  
+  .book-now-li {
+      padding: 15px 20px;
+  }
+
+  .book-now-btn {
+      width: 100%;
+      display: block;
+  }
+
+  .menu-icon {
+    display: block; /* Show the hamburger icon */
+  }
+
+  /* Optional: hide some icons on smaller screens if too cluttered */
+  .nav-icons a[aria-label="Search"] {
+      display: none;
+  }
+}
