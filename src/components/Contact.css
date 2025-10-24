@@ -1,0 +1,120 @@
+/* src/Contact.css */
+
+/* --- Main Page Styling --- */
+.contact-page {
+  width: 100%;
+  padding: 40px 5%;
+  box-sizing: border-box;
+  background-color: #fdfaf7;
+  font-family: Arial, sans-serif;
+}
+
+.contact-page-title {
+  font-size: 2.5rem;
+  color: #4b3d32;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-page-subtitle {
+  font-size: 1.1rem;
+  color: #7a6a5d;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+/* --- Layout Container --- */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; /* This makes it stack on mobile! */
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Columns --- */
+.contact-info,
+.contact-form-container {
+  flex: 1; /* Each column tries to take up equal space */
+  min-width: 300px; /* On small screens, they will be >100%, so they stack */
+}
+
+/* --- Contact Info Column --- */
+.contact-info h2 {
+  font-size: 1.8rem;
+  color: #4b3d32;
+  margin-bottom: 20px;
+}
+.contact-info p {
+  font-size: 1rem;
+  color: #7a6a5d;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  color: #4b3d32;
+}
+
+.info-icon {
+  font-size: 1.2rem;
+  color: #4b3d32;
+  margin-right: 15px;
+  margin-top: 3px;
+}
+
+/* --- Contact Form Column --- */
+.contact-form-container h2 {
+  font-size: 1.8rem;
+  color: #4b3d32;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box; /* Important */
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #4b3d32;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #4b3d32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #6a5649;
+}

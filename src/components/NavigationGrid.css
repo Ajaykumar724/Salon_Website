@@ -1,0 +1,94 @@
+/* src/NavigationGrid.css */
+
+.nav-grid-section {
+  width: 100%;
+  padding: 50px 5%; /* Adds space above and below */
+  box-sizing: border-box;
+  background-color: #fdfaf7; /* Matches your other pages */
+}
+
+/* This is the 2x2 grid container */
+.nav-grid-container {
+  display: grid;
+  /* Creates 2 equal columns. This is responsive by default! */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Space between the grid items */
+  max-width: 900px;
+  margin: 0 auto; /* Center the grid */
+}
+
+/* This is the "button" or link item */
+.grid-link {
+  position: relative; /* Crucial for positioning the overlay */
+  /* This creates a perfect 1:1 square */
+  aspect-ratio: 1 / 1;
+  overflow: hidden; /* Hides image overflow and rounds corners */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none; /* Removes underline from link */
+  display: block; /* Makes the link a block element */
+  transition: transform 0.3s ease;
+}
+
+.grid-link:hover {
+  transform: translateY(-5px); /* Lifts the card on hover */
+}
+
+/* The background image */
+.grid-link-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.3s ease;
+  filter: brightness(0.8); /* Slightly darkens image */
+}
+
+.grid-link:hover .grid-link-image {
+  transform: scale(1.05); /* Zooms image on hover */
+  filter: brightness(0.6); /* Darkens more on hover */
+}
+
+/* The text overlay */
+.grid-link-overlay {
+  /* Positions overlay at the bottom */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* Fades from black to transparent for a professional look */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  /* Positions text at the bottom-left */
+  display: flex;
+  align-items: flex-end;
+  color: white;
+}
+
+.grid-link-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 600px) {
+  .nav-grid-container {
+    gap: 15px; /* Smaller gap on mobile */
+  }
+
+  .grid-link-title {
+    font-size: 1.3rem; /* Smaller font on mobile */
+  }
+
+  .grid-link-overlay {
+    padding: 15px;
+  }
+}

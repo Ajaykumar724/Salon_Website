@@ -4,9 +4,9 @@
 /* --- CSS Variables for Easy Customization --- */
 :root {
   --primary-color: #d4af37; /* A gold/tan color for accents */
-  --dark-color: #1a1a1a;
-  --text-color: #333;
-  --background-color: #ffffff;
+  --dark-color: #fff;
+  --text-color: #fff;
+  --background-color: #000;
   --font-family: 'Montserrat', sans-serif;
 }
 

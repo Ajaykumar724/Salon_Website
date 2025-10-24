@@ -1,0 +1,67 @@
+/* src/Gallery.css */
+
+/* --- Main Page Styling --- */
+.gallery-page {
+  width: 100%;
+  padding: 40px 5%; /* 5% padding on the sides */
+  box-sizing: border-box;
+  background-color: #fdfaf7; /* Light salon background */
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.gallery-page-title {
+  font-size: 2.5rem;
+  color: #4b3d32; /* Dark brown */
+  margin-bottom: 10px;
+}
+
+.gallery-page-subtitle {
+  font-size: 1.1rem;
+  color: #7a6a5d;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Gallery Grid Container (The Layout) --- */
+.gallery-container {
+  display: grid;
+  /* This is the magic for a responsive grid! */
+  /* It creates as many 300px-wide columns as it can. */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px; /* The space between images */
+  width: 100%;
+  max-width: 1200px; /* Prevents it from getting too wide on large monitors */
+  margin: 0 auto; /* Center the grid */
+}
+
+/* --- Individual Gallery Item --- */
+.gallery-item {
+  /* This creates a uniform 4:5 portrait aspect ratio */
+  /* This is great for hair photos */
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  overflow: hidden; /* This is crucial for the hover effect and rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills the box without stretching */
+  display: block;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* --- Hero Hover Effect --- */
+.gallery-item:hover {
+  transform: translateY(-5px); /* Lift the card slightly */
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.05); /* Zoom the image inside */
+}

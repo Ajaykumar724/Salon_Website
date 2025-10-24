@@ -1,0 +1,121 @@
+/* src/Services.css */
+
+/* --- Main Page Styling --- */
+.services-page {
+  width: 100%;
+  padding: 40px 5%; /* 5% padding on the sides */
+  box-sizing: border-box; /* Important for padding */
+  background-color: #fdfaf7; /* A light, elegant salon background color */
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  color: #4b3d32; /* A dark brown */
+  margin-bottom: 10px;
+}
+
+.services-subtitle {
+  font-size: 1.1rem;
+  color: #7a6a5d;
+  margin-bottom: 40px;
+}
+
+/* --- Service Card Container (The Layout) --- */
+.services-container {
+  display: flex; /* Use flexbox for the layout */
+  flex-wrap: wrap; /* Allows items to wrap to the next line on small screens */
+  justify-content: center; /* Center the cards */
+  gap: 30px; /* This creates space between your cards */
+}
+
+/* --- Individual Service Card --- */
+.service-card {
+  /* This is the key to the 2-column layout.
+    flex-basis: 45% means each card tries to take up 45% of the container.
+    (45% + 45% + gap) fits perfectly in two columns.
+  */
+  flex-basis: 45%;
+  max-width: 500px; /* Max width for large screens */
+  min-width: 300px; /* Min width for small screens */
+  flex-grow: 1; /* Allows cards to grow if space is available */
+
+  position: relative; /* CRITICAL: This lets us position the overlay inside it */
+  border-radius: 10px;
+  overflow: hidden; /* Keeps the image and overlay inside the rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px); /* Lifts the card slightly on hover */
+}
+
+/* --- Card Image --- */
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the whole card */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* A subtle zoom effect on the image when hovering the card */
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+/* --- Text Overlay (The Hover Effect) --- */
+.service-overlay {
+  /* Position it absolutely over the entire card */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Black background with 70% transparency */
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+
+  /* Center the text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* This is the magic!
+    Start with 0 opacity (invisible).
+    The React state will change this to 1.
+  */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-in/out */
+}
+
+.overlay-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.overlay-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* --- Responsive (for mobile phones) --- */
+@media (max-width: 768px) {
+  .service-card {
+    /* On small screens, make cards 1-column (take up 100% width) */
+    flex-basis: 100%;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+}

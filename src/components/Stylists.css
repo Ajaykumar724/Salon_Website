@@ -1,0 +1,129 @@
+/* src/Stylists.css */
+
+/* --- Main Page Styling --- */
+.stylists-page {
+  width: 100%;
+  padding: 40px 5%;
+  box-sizing: border-box;
+  background-color: #fdfaf7; /* Light salon background */
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.stylists-page-title {
+  font-size: 2.5rem;
+  color: #4b3d32; /* Dark brown */
+  margin-bottom: 10px;
+}
+
+.stylists-page-subtitle {
+  font-size: 1.1rem;
+  color: #7a6a5d;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Stylists Container (The Layout) --- */
+.stylists-container {
+  display: flex; /* MOBILE-FIRST: Default to a flex column */
+  flex-direction: column;
+  align-items: center; /* Center cards in the column */
+  gap: 30px; /* Space between cards */
+}
+
+/* --- Individual Stylist Card --- */
+.stylist-card {
+  /* MOBILE-FIRST: Cards are 90% wide on mobile */
+  width: 90%;
+  max-width: 380px; /* Max card width for a clean look */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* To keep the image corners rounded */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stylist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Card Image --- */
+.stylist-image-container {
+  /* This creates a uniform 4:5 portrait aspect ratio */
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  overflow: hidden;
+}
+
+.stylist-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area, cropping if needed */
+  transition: transform 0.4s ease;
+}
+
+.stylist-card:hover .stylist-image {
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* --- Card Info --- */
+.stylist-info {
+  padding: 25px;
+}
+
+.stylist-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #4b3d32;
+  margin: 0 0 5px 0;
+}
+
+.stylist-role {
+  font-size: 1rem;
+  color: #a99a8e; /* A softer accent color */
+  font-style: italic;
+  margin: 0 0 15px 0;
+}
+
+.stylist-bio {
+  font-size: 0.95rem;
+  color: #7a6a5d;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.stylist-social-link {
+  font-size: 1.8rem; /* Large, easy-to-tap icon */
+  color: #4b3d32;
+  transition: color 0.3s ease;
+}
+
+.stylist-social-link:hover {
+  color: #d4b8a8; /* Elegant hover color */
+}
+
+/* --- RESPONSIVE (Tablet & Desktop) --- */
+@media (min-width: 600px) {
+  .stylists-container {
+    /* Switch to a grid layout */
+    display: grid;
+    /* Create 2 equal-width columns */
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch; /* Make cards in a row the same height */
+  }
+
+  .stylist-card {
+    width: 100%; /* Card now fills its grid cell */
+  }
+}
+
+@media (min-width: 992px) {
+  .stylists-container {
+    /* Switch to 3 columns on large screens */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
